@@ -25,6 +25,7 @@ from IPython.display import Image, display
 
 from tensorflow_chessbot.tensorflow_chessbot_chessfenbot import helper_functions as hf
 import tensorflow_chessbot
+from tensorflow_chessbot.tensorflow_learn import train_dataset, test_dataset
 
 np.set_printoptions(precision=2, suppress=True)
 
@@ -53,9 +54,9 @@ train_images, train_labels = hf.loadFENtiles(train_paths) # Load from generated 
 # Test dataset, taken from screenshots of the starting position
 print ("Loading %d Training tiles" % test_paths.size)
 test_images, test_labels = hf.loadFENtiles(test_paths) # Load from generated set
-
-train_dataset = hf.DataSet(train_images, train_labels, dtype=tf.float32)
-test_dataset = hf.DataSet(test_images, test_labels, dtype=tf.float32)
+#
+# train_dataset = hf.DataSet(train_images, train_labels, dtype=tf.float32)
+# test_dataset = hf.DataSet(test_images, test_labels, dtype=tf.float32)
 #TODO: откуда этот датасет берется??
 
 # Looks good. Now that we've loaded the data, let's build up a deep CNN classifier based off of [this beginner tutorial](https://www.tensorflow.org/versions/v0.6.0/tutorials/mnist/pros/index.html) on tensorflow.

@@ -121,7 +121,7 @@ def lengthenFEN(fen):
             .replace('4','1111').replace('3','111').replace('2','11')
 
 def unflipFEN(fen):
-    FEN = fen #TODO: разобраться, что это вообще..
+    FEN = fen
     if len(fen) < 71:
         fen = lengthenFEN(FEN)
     return '/'.join([ r[::-1] for r in fen.split('/') ][::-1])
